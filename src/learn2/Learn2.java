@@ -19,7 +19,7 @@ import learn2.values.WindowPreferences;
 
 /**
  *
- * @author pablo
+ * @author EQA
  */
 public class Learn2 extends Application {
     

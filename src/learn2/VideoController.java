@@ -43,7 +43,7 @@ import learn2.values.WindowPreferences;
 /**
  * FXML Controller class
  *
- * @author pablo
+ * @author EQA
  */
 public class VideoController implements Initializable {
 
@@ -63,9 +63,6 @@ public class VideoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
-        //String urlvideo = "file:///c:/Users/pablo/Documents/NetBeansProjects/Learn/src/learn/images/video01.mp4";
-        //Media media = new Media(urlvideo);
         Media media = new Media(VideoController.class.getResource("videos/video01.mp4").toExternalForm());
         media.setOnError(() -> System.out.println("Media: " + media.getError().getMessage()));
 

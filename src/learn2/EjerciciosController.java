@@ -34,7 +34,7 @@ import learn2.values.WindowPreferences;
 /**
  * FXML Controller class
  *
- * @author pablo
+ * @author EQA
  */
 public class EjerciciosController implements Initializable {
 
