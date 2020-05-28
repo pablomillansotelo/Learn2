@@ -50,13 +50,16 @@ public class VideoControllerMulti implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
-        Media media = new Media(VideoController.class.getResource("videos/video01.mp4").toExternalForm());
+
+
+        //String urlvideo = "file:///c:/Users/pablo/Documents/NetBeansProjects/Learn/src/learn/images/video01.mp4";
+        //Media media = new Media(urlvideo);
+        Media media = new Media(VideoControllerMulti.class.getResource("videos/videom.mp4").toExternalForm());
         media.setOnError(() -> System.out.println("Media: " + media.getError().getMessage()));
 
         MediaPlayer player = new MediaPlayer(media);
         player.setOnError(() -> System.out.println("MediaPlayer: " + player.getError().getMessage()));
-        
+
         ObservableMap<String, Duration> markers = media.getMarkers();
         markers.put("START", Duration.ZERO);
         markers.put("INTERVAL", Duration.minutes(0.8));
@@ -69,29 +72,33 @@ public class VideoControllerMulti implements Initializable {
         });
 
         view.setMediaPlayer(player);
-        
+
         player.setOnReady(() -> {
 
-            total_time.setText(String.format("%.2f", player.getTotalDuration().toMinutes()));     
+            total_time.setText(String.format("%.2f", player.getTotalDuration().toMinutes()));
             slider_time.setMax(player.getTotalDuration().toSeconds());
-            
+
             slider_time.valueProperty().addListener((p, o, value) -> {
                 if (slider_time.isPressed()) {
                     player.seek(Duration.seconds(value.doubleValue()));
                 }
             });
+
             player.currentTimeProperty().addListener((p, o, value) -> {
                 slider_time.setValue(value.toSeconds());
                 actual_time.setText(String.format("%.2f", value.toMinutes()));
-            });            
+            });
+
             player.play();
-        });               
+        });
+
+
         player.volumeProperty().bind(volumen.valueProperty());
         actual_volumen.textProperty().bind(player.volumeProperty().multiply(100.0).asString("%.2f %%"));
         play.setOnAction(e -> player.play());
         pause.setOnAction(e -> player.pause());
         replay.setOnAction(e -> {
-            player.stop();            
+            player.stop();
         });
         exit.setOnAction(e ->{
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -110,18 +117,18 @@ public class VideoControllerMulti implements Initializable {
                 practice.getScene().getWindow().hide();
                 player.stop();
                 Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("VentanaEjerciciosMulti.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("VentanaEjercicios.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.setTitle(Strings.TITLE);
                 stage.setMinWidth(WindowPreferences.minWidth);
                 stage.setMinHeight(WindowPreferences.minHeight);
-                stage.setResizable(false);
-                stage.show();                
+                stage.show();
+
             } catch (IOException ex) {
-                Logger.getLogger(VideoController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(VideoControllerMulti.class.getName()).log(Level.SEVERE, null, ex);
             }
-        });        
-    }  
-    
+        });
+
+    }
 }
