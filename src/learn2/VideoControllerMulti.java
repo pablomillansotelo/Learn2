@@ -75,6 +75,7 @@ public class VideoControllerMulti implements Initializable {
 
         player.setOnReady(() -> {
 //
+
             total_time.setText(String.format("%.2f", player.getTotalDuration().toMinutes()));
             slider_time.setMax(player.getTotalDuration().toSeconds());
 
