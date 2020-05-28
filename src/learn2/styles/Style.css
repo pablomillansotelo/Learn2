@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/05/2020, 02:19:06 AM
+    Author     : pablo
+*/
+.buttonCalificarAceptar{
+    -fx-background-color: #2ECC71;
+    -fx-font-family: verdana;
+    -fx-font-size: 12;
+    -fx-text-fill: #ECF0F1
+}
+.buttonRegresarSalir{
+    -fx-background-color: #E74C3C;
+    -fx-font-family: verdana;
+    -fx-text-fill: #ECF0F1
+}
+.buttonReiniciar{
+    -fx-background-color: #F39C12;
+    -fx-font-family: verdana;
+    -fx-text-fill: #ECF0F1
+}
+.buttonPlay {
+    -fx-graphic: url('../images/ic_play.png');
+}
+.buttonReplay {
+    -fx-graphic: url('../images/ic_replay.png');
+}
+.buttonPause {
+    -fx-graphic: url('../images/ic_pause.png');
+}
+.titleEjercicios{
+    -fx-font-family: Britannic Bold;
+    -fx-font-size: 36px;
+    -fx-text-fill: #845b8a
+}
+.subtitleEjercicios{
+    -fx-font-family: Arial Black;
+    -fx-font-size: 25px;
+    -fx-text-fill: #544380
+}

@@ -5,14 +5,11 @@
  */
 package learn2;
 
+import java.io.IOException;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import learn2.values.Strings;
 import learn2.values.WindowPreferences;
@@ -26,13 +23,8 @@ public class Learn2 extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("VentanaVideo.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setTitle(Strings.TITLE);
-        stage.setMinWidth(WindowPreferences.minWidth);
-        stage.setMinHeight(WindowPreferences.minHeight);
-        stage.show();
+        //testSuma(stage);
+        testResta(stage);
     }
 
     /**
@@ -42,4 +34,24 @@ public class Learn2 extends Application {
         launch(args);
     }
     
+    private void testSuma(Stage stage) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaVideo.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle(Strings.TITLE);
+        stage.setMinWidth(WindowPreferences.minWidth);
+        stage.setMinHeight(WindowPreferences.minHeight);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void testResta(Stage stage) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaEjerciciosResta.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle(Strings.TITLE);
+        stage.setMinWidth(WindowPreferences.minWidth);
+        stage.setMinHeight(WindowPreferences.minHeight);
+        stage.setResizable(false);
+        stage.show();
+    }
 }

@@ -13,10 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.BorderPane;
 import javafx.collections.ObservableMap;
-import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -26,9 +23,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaMarkerEvent;
 import javafx.scene.media.MediaPlayer;
@@ -92,16 +86,12 @@ public class VideoController implements Initializable {
                     player.seek(Duration.seconds(value.doubleValue()));
                 }
             });
-
             player.currentTimeProperty().addListener((p, o, value) -> {
                 slider_time.setValue(value.toSeconds());
                 actual_time.setText(String.format("%.2f", value.toMinutes()));
-            });
-            
+            });            
             player.play();
-        });
-        
-        
+        });               
         player.volumeProperty().bind(volumen.valueProperty());
         actual_volumen.textProperty().bind(player.volumeProperty().multiply(100.0).asString("%.2f %%"));
         play.setOnAction(e -> player.play());
@@ -132,12 +122,11 @@ public class VideoController implements Initializable {
                 stage.setTitle(Strings.TITLE);
                 stage.setMinWidth(WindowPreferences.minWidth);
                 stage.setMinHeight(WindowPreferences.minHeight);
-                stage.show();
-                
+                stage.setResizable(false);
+                stage.show();                
             } catch (IOException ex) {
                 Logger.getLogger(VideoController.class.getName()).log(Level.SEVERE, null, ex);
             }
-        });
-        
+        });        
     } 
 }

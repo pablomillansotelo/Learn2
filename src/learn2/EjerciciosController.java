@@ -10,7 +10,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -81,6 +80,7 @@ public class EjerciciosController implements Initializable {
                 stage.setTitle(Strings.TITLE);
                 stage.setMinWidth(WindowPreferences.minWidth);
                 stage.setMinHeight(WindowPreferences.minHeight);
+                stage.setResizable(false);
                 stage.show(); 
             } catch (IOException ex) {
                 Logger.getLogger(VideoController.class.getName()).log(Level.SEVERE, null, ex);
@@ -145,7 +145,6 @@ public class EjerciciosController implements Initializable {
         int i=0;
         while(list.size()<10){
             aux= (int) (Math.random()*20);
-            System.out.println(aux);
             if(!list.contains(aux)){
                 ejercicios10[0][i]=ejerciciostodos[0][aux];
                 ejercicios10[1][i]=ejerciciostodos[1][aux];

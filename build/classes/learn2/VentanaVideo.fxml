@@ -31,7 +31,9 @@
                <font>
                   <Font name="Arial Black" size="25.0" />
                </font></Label></HBox>
-            <HBox alignment="center"><MediaView fx:id="view" preserveRatio="false" fitHeight="360" fitWidth="640" /></HBox>
+            <HBox alignment="center">
+                <MediaView fx:id="view" preserveRatio="false" fitHeight="360" fitWidth="640" />
+            </HBox>
                 
             <HBox
                 spacing="10">
