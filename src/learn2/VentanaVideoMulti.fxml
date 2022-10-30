@@ -9,7 +9,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="learn2.VideoControllerMulti">
+<AnchorPane 
     id="AnchorPane"
     styleClass="background"
     xmlns:fx="http://javafx.com/fxml/1"
@@ -17,30 +17,40 @@
 
     <children>
         <VBox
-                fx:id="root"
-                minWidth="800"
-                spacing="10">
-            <padding><Insets top="25" right="25" bottom="25" left="25"/></padding>
+            fx:id="root"
+            minWidth="800"
+            spacing="10">
+            <padding>
+                <Insets top="25" right="25" bottom="25" left="25"/>
+            </padding>
 
-            <HBox alignment="center"><Label text="TEMA Multiplicaciones" textFill="#845b8a">
-                <font>
-                    <Font name="Britannic Bold" size="36.0" />
-                </font></Label></HBox>
-            <HBox alignment="center"><Label text="Video Explicación de Multiplicaciones" textFill="#544380">
-                <font>
-                    <Font name="Arial Black" size="25.0" />
-                </font></Label></HBox>
-            <HBox alignment="center"><MediaView fx:id="view" preserveRatio="false" fitHeight="360" fitWidth="640" /></HBox>
+            <HBox alignment="center">
+                <Label text="TEMA Multiplicaciones" textFill="#845b8a">
+                    <font>
+                        <Font name="Britannic Bold" size="36.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="center">
+                <Label text="Video Explicación de Multiplicaciones" textFill="#544380">
+                    <font>
+                        <Font name="Arial Black" size="25.0" />
+                    </font>
+                </Label>
+            </HBox>
+            <HBox alignment="center">
+                <MediaView fx:id="view" preserveRatio="false" fitHeight="360" fitWidth="640" />
+            </HBox>
 
             <HBox
-                    spacing="10">
+                spacing="10">
                 <Label fx:id="actual_time" text="0.00"/>
                 <Slider fx:id="slider_time" HBox.hgrow="ALWAYS"/>
                 <Label fx:id="total_time" text="0.00"/>
             </HBox>
             <HBox
-                    spacing="10"
-                    alignment="center">
+                spacing="10"
+                alignment="center">
                 <Button fx:id="play" styleClass="buttonPlay" stylesheets="@styles/Botones.css"/>
                 <Button fx:id="pause" styleClass="buttonPause" stylesheets="@styles/Botones.css"/>
                 <Button fx:id="replay" styleClass="buttonReplay" stylesheets="@styles/Botones.css"/>

@@ -118,7 +118,7 @@ public class VideoControllerMulti implements Initializable {
                 practice.getScene().getWindow().hide();
                 player.stop();
                 Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("VentanaEjercicios.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("VentanaEjerciciosMulti.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.setTitle(Strings.TITLE);

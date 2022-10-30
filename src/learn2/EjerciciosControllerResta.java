@@ -73,7 +73,7 @@ public class EjerciciosControllerResta implements Initializable {
             try {
                 back.getScene().getWindow().hide();
                 Stage stage = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("VentanaVideo.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("VentanaVideoResta.fxml"));
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.setTitle(Strings.TITLE);

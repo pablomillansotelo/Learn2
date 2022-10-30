@@ -24,7 +24,9 @@ public class Learn2 extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         //testSuma(stage);
-        testResta(stage);
+        //testResta(stage);
+        testMulti(stage);
+        //testMenu(stage);
     }
 
     /**
@@ -45,7 +47,27 @@ public class Learn2 extends Application {
         stage.show();
     }
     private void testResta(Stage stage) throws IOException{
-        Parent root = FXMLLoader.load(getClass().getResource("VentanaEjerciciosResta.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaVideoResta.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle(Strings.TITLE);
+        stage.setMinWidth(WindowPreferences.minWidth);
+        stage.setMinHeight(WindowPreferences.minHeight);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void testMulti(Stage stage) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaVideoMulti.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setTitle(Strings.TITLE);
+        stage.setMinWidth(WindowPreferences.minWidth);
+        stage.setMinHeight(WindowPreferences.minHeight);
+        stage.setResizable(false);
+        stage.show();
+    }
+    private void testMenu(Stage stage) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("VentanaMenu.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle(Strings.TITLE);
